@@ -55,9 +55,9 @@ def get_iscam_intensities(h5py_filename):
     """
     with h5py.File(h5py_filename, 'r') as f:
         # Column C contains the raw intensity values
-        intensities = np.array(f['C'])
+        intensities = np.array(f['contrast'])
         # Column G contains indices of proper events
-        idx = np.array(f['G'])
+        idx = np.array(f['good_flags'])
     return intensities[idx]
 
 
